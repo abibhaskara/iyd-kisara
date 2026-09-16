@@ -5,12 +5,12 @@
  */
 
 export const META = {
-    name: 'Abi Bhaskara Mulia',
-    eventType: 'Sweet Seventeen',
-    date: 'Saturday, 30 Juni 2026',
-    shortDate: '30 . 06 . 2026',
-    venue: 'Mulia Resort - Nusa Dua',
-    dressCode: 'Monochrome Glamour',
+    name: 'INTERNATIONAL YOUTH DAY',
+    eventType: 'KISARA PKBI BALI 2026',
+    date: 'Sabtu, 19 September 2026',
+    shortDate: '19 . 09 . 2026',
+    venue: 'Aula Lantai 3 PKBI Daerah Bali',
+    dressCode: 'Bebas, Rapi & Nyaman',
     heroImage: 'https://res.cloudinary.com/dnbgczi9b/image/upload/v1781613036/Untitled-3_dvx1p8.webp',
     siteUrl: '', // URL Produksi untuk mengisi og:url
 };

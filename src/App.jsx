@@ -4,7 +4,6 @@ import { TEMPLATE_CONTENT, GlobalStyles } from './config';
 import { NAV_ITEMS } from './utils/constants';
 
 // UI Components
-import { Lightbox } from './components/ui/Lightbox';
 import { LazySection } from './components/ui/LazySection';
 import { LandingEnvelope } from './components/ui/LandingEnvelope';
 import { Navbar } from './components/ui/Navbar';
@@ -12,17 +11,14 @@ import {
     SparkleCursor, 
     BackgroundAudio, 
     ScrollProgress, 
-    FloatingDecorations, 
-    FloatingHearts, 
-    FloatingAudio 
+    FloatingDecorations 
 } from './components/ui/FloatingElements';
 
 // Section Components
 import { HomeSection } from './components/sections/HomeSection';
 import { EventSection } from './components/sections/EventSection';
+import { AgendaSection } from './components/sections/AgendaSection';
 import { DresscodeSection } from './components/sections/AttireSection';
-import { GallerySection } from './components/sections/GallerySection';
-import { WishesSection } from './components/sections/WishesSection';
 import { ThankYouSection } from './components/sections/ThankYouSection';
 
 // Layout Components
@@ -32,7 +28,6 @@ export default function App() {
     const [hasEntered, setHasEntered] = useState(false);
     const [activeSection, setActiveSection] = useState('home');
     const [isPlaying, setIsPlaying] = useState(false);
-    const [lightboxImage, setLightboxImage] = useState(null);
     const [navbarVisible, setNavbarVisible] = useState(false);
 
     const [guestName] = useState(() => {
@@ -48,7 +43,7 @@ export default function App() {
             const scrollPosition = window.scrollY + window.innerHeight / 3;
             for (const item of NAV_ITEMS) {
                 const el = document.getElementById(item.id);
-                if (el && scrollPosition >= el.offsetTop && scrollPosition < el.offsetTop + el.offsetHeight) {
+                if (el && scrollPosition >= el.offsetTop && scrollPosition < el.offsetHeight + el.offsetTop) {
                     setActiveSection(item.id);
                 }
             }
@@ -64,13 +59,6 @@ export default function App() {
             <GlobalStyles />
             <SparkleCursor />
             <BackgroundAudio isPlaying={isPlaying} />
-            <Lightbox
-                selectedImage={lightboxImage}
-                onClose={() => setLightboxImage(null)}
-                images={TEMPLATE_CONTENT.gallery.images}
-                onNavigate={setLightboxImage}
-                isOpen={!!lightboxImage}
-            />
             <div className="fixed inset-0 pointer-events-none opacity-[0.04] z-[40]" style={{ backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")` }} />
 
             <AnimatePresence mode='wait'>
@@ -83,13 +71,10 @@ export default function App() {
                     <EventSection />
                 </LazySection>
                 <LazySection minHeight="100vh">
+                    <AgendaSection />
+                </LazySection>
+                <LazySection minHeight="100vh">
                     <DresscodeSection />
-                </LazySection>
-                <LazySection minHeight="100vh">
-                    <GallerySection onImageClick={setLightboxImage} />
-                </LazySection>
-                <LazySection minHeight="100vh">
-                    <WishesSection />
                 </LazySection>
                 <LazySection minHeight="100vh">
                     <ThankYouSection />
@@ -101,8 +86,6 @@ export default function App() {
                 <>
                     <ScrollProgress isVisible={navbarVisible} />
                     <FloatingDecorations isVisible={navbarVisible} />
-                    <FloatingHearts isVisible={navbarVisible} />
-                    <FloatingAudio isPlaying={isPlaying} toggleMusic={() => setIsPlaying(!isPlaying)} isVisible={navbarVisible} />
                     <Navbar activeSection={activeSection} isVisible={navbarVisible} />
                 </>
             )}

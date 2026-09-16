@@ -9,56 +9,70 @@ import { META } from './meta';
 export const TEMPLATE_CONTENT = {
     // Data Utama
     name: META.name,
+    eventType: META.eventType,
     date: META.shortDate,
-    dateTimeIso: "20260630T180000/20260630T210000",
+    dateTimeIso: "20260919T090000/20260919T170000",
     locationName: META.venue,
-    locationAddress: "Jl. Raya Nusa Dua Selatan, Bali",
-    quote: <>Seventeen years of elegance,<br />grace, and dreams.</>,
+    locationAddress: "Jl. Gatot Subroto IV No. 6, Dauh Puri Kaja, Denpasar Utara, Kota Denpasar, Bali 80233",
+    quote: <>"Ragam Nalar, Sejuta Layar<br />untuk Hak dan Suara"</>,
     musicUrl: "/music/background.mp3",
 
     // Landing Page
     landing: {
-        supTitle: "The 17th Birthday of",
-        specialFor: "Special Invitation For",
-        defaultGuest: "Honored Guest",
-        openButton: "Open Invitation",
-        heroImage: "https://res.cloudinary.com/dnbgczi9b/video/upload/v1781837390/0616_1_1_shza72.webm"
+        supTitle: "PUNCAK PERAYAAN",
+        specialFor: "ANDA DIUNDANG",
+        defaultGuest: "Tamu Kehormatan",
+        openButton: "Buka Undangan",
+        heroImage: "https://res.cloudinary.com/dnbgczi9b/image/upload/v1789575572/Blue_White_Minimalist_9.9_Super_Sale_Instagram_Story_snsl7v.png"
     },
 
     // Section: Home
     home: {
-        supTitle: "The Sweet Seventeen",
-        saveDateLabel: "Save The Date",
-        scrollLabel: "Scroll",
-        heroImage: "https://res.cloudinary.com/dnbgczi9b/video/upload/v1781837390/0616_1_1_shza72.webm"
+        supTitle: "PUNCAK PERAYAAN",
+        description: "Mari bersama merayakan semangat, kreativitas, dan keberagaman suara anak muda dalam menyuarakan hak, gagasan, dan perubahan.",
+        saveDateLabel: "Simpan Tanggal Ini",
+        scrollLabel: "Gulir Ke Bawah",
+        heroImage: "https://res.cloudinary.com/dnbgczi9b/image/upload/v1789575572/Blue_White_Minimalist_9.9_Super_Sale_Instagram_Story_snsl7v.png"
     },
 
     // Section: Event
     event: {
-        sectionTitle: "The Celebration",
-        sectionSubtitle: "Details",
-        countdownLabel: "The Big Day In",
-        timeTitle: "Saturday Evening",
-        timeDetail: "Start at 18:00 WIB",
-        addToCalendar: "Save to Calendar",
-        mapButton: "View Map",
-        mapUrl: "https://maps.app.goo.gl/X4ZzTJsHKGJopQV37",
+        sectionTitle: "Perayaan",
+        sectionSubtitle: "Detail",
+        countdownLabel: "Acara Dimulai Dalam",
+        timeTitle: "Sabtu, 19 September 2026",
+        timeDetail: "09.00 WITA – selesai",
+        addToCalendar: "Simpan ke Kalender",
+        mapButton: "Lihat Peta",
+        mapUrl: "https://maps.app.goo.gl/2doyR7i7ZAPp9VBJA",
         calendarUrl: ""
+    },
+
+    // Section: Agenda
+    agenda: {
+        sectionTitle: "Agenda Acara",
+        sectionSubtitle: "Sorotan Acara",
+        items: [
+            {
+                title: "🎬 Film Screening & Discussion",
+                desc: "Menonton dan berdiskusi bersama tentang karya serta perspektif anak muda."
+            },
+            {
+                title: "🏆 Awarding Session",
+                desc: "Pengumuman dan apresiasi bagi para pemenang:\nLomba Debat\nLomba Film Vertikal"
+            },
+            {
+                title: "✨ Celebration & Youth Voices",
+                desc: "Merayakan keberanian anak muda untuk berpikir, berkarya, bersuara, dan mengambil ruang."
+            }
+        ]
     },
 
     // Section: Dresscode
     attire: {
-        sectionTitle: "Attire Guide",
-        sectionSubtitle: "Dress Code",
-        description: <>We kindly request you to dress in<br /><span className="font-serif text-2xl italic text-black">"{META.dressCode}"</span></>,
-        noteTitle: "Note",
-        noteDetail: "Formal Suits & Evening Gowns",
-        colors: [
-            { hex: '#000000', name: 'Midnight Black' },
-            { hex: '#ffffff', name: 'Pure White' },
-            { hex: '#808080', name: 'Classic Grey' },
-            { hex: '#D4AF37', name: 'Champagne Gold' }
-        ]
+        sectionTitle: "Panduan Pakaian",
+        sectionSubtitle: "Kode Busana",
+        description: <>Kami mengundang Anda untuk hadir dengan pakaian<br /><span className="font-serif text-2xl italic text-black">"{META.dressCode}"</span></>
     },
 
     // Section: Gallery
@@ -87,13 +101,14 @@ export const TEMPLATE_CONTENT = {
 
     // Section: Thank You
     thankYou: {
-        title: "Thank You",
-        message: <>Your presence is the greatest gift of all.<br />We can't wait to share this beautiful evening with you.</>
+        title: "Sampai Jumpa!",
+        message: <>MARI MERAYAKAN KEKUATAN SUARA ANAK MUDA<br />BERSAMA KISARA BALI.</>
     },
 
     // Footer
     footer: {
-        credit: "Made with love by Me"
+        credit: "Dibuat dengan kreativitas oleh abibhaskara",
+        link: "https://abibhaskara.com"
     }
 };
 
