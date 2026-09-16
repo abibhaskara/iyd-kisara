@@ -11,7 +11,7 @@ export const META = {
     shortDate: '19 . 09 . 2026',
     venue: 'Aula Lantai 3 PKBI Daerah Bali',
     dressCode: 'Bebas, Rapi & Nyaman',
-    heroImage: 'https://res.cloudinary.com/dnbgczi9b/image/upload/v1781613036/Untitled-3_dvx1p8.webp',
+    heroImage: 'https://kisara.or.id/wp-content/uploads/2020/04/cropped-Logo-Kisara-2-2-300x172.png',
     siteUrl: '', // URL Produksi untuk mengisi og:url
 };
 

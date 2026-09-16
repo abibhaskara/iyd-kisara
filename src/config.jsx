@@ -20,8 +20,8 @@ export const TEMPLATE_CONTENT = {
     // Landing Page
     landing: {
         supTitle: "PUNCAK PERAYAAN",
-        specialFor: "ANDA DIUNDANG",
-        defaultGuest: "Tamu Kehormatan",
+        specialFor: "KEPADA",
+        defaultGuest: "Tamu",
         openButton: "Buka Undangan",
         heroImage: "https://res.cloudinary.com/dnbgczi9b/image/upload/v1789575572/Blue_White_Minimalist_9.9_Super_Sale_Instagram_Story_snsl7v.png"
     },
