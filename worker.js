@@ -178,6 +178,11 @@ export default {
             return handleRsvp(request, env);
         }
 
-        return env.ASSETS.fetch(request);
+        const response = await env.ASSETS.fetch(request);
+        if (response.status === 404 && !url.pathname.startsWith('/api/')) {
+            const indexUrl = new URL('/', request.url);
+            return env.ASSETS.fetch(new Request(indexUrl, request));
+        }
+        return response;
     },
 };
