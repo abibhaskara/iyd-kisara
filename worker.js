@@ -178,11 +178,14 @@ export default {
             return handleRsvp(request, env);
         }
 
-        const response = await env.ASSETS.fetch(request);
-        if (response.status === 404 && !url.pathname.startsWith('/api/')) {
-            const indexUrl = new URL('/', request.url);
-            return env.ASSETS.fetch(new Request(indexUrl, request));
+        try {
+            const response = await env.ASSETS.fetch(request);
+            if (response.status === 404) {
+                return env.ASSETS.fetch(new URL('/', request.url));
+            }
+            return response;
+        } catch (e) {
+            return env.ASSETS.fetch(new URL('/', request.url));
         }
-        return response;
     },
 };
