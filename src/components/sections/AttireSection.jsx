@@ -10,7 +10,7 @@ export const DresscodeSection = () => {
     return (
         <SectionWrapper title={attire.sectionTitle} subtitle={attire.sectionSubtitle} id="dresscode">
             <div className="text-center pb-8">
-                <motion.p variants={fadeInUp} className="font-light text-gray-600 leading-loose text-lg">{attire.description}</motion.p>
+                <motion.p variants={fadeInUp} className="font-light text-white/90 leading-loose text-lg">{attire.description}</motion.p>
             </div>
         </SectionWrapper>
     );

@@ -74,7 +74,7 @@ export const EventSection = () => {
     return (
         <SectionWrapper title={event.sectionTitle} subtitle={event.sectionSubtitle} id="event">
             <motion.div variants={elegantStagger} className="space-y-8 sm:space-y-12">
-                <motion.div variants={elegantFadeIn} whileHover={{ y: -5, transition: { duration: 0.4, ease: "easeOut" } }} className="flex flex-col items-center text-center p-8 sm:p-10 border border-gray-100 bg-white shadow-sm hover:shadow-lg transition-shadow duration-500 rounded-sm">
+                <motion.div variants={elegantFadeIn} whileHover={{ y: -5, transition: { duration: 0.4, ease: "easeOut" } }} className="flex flex-col items-center text-center p-8 sm:p-10 border border-white/60 bg-white/80 backdrop-blur-md shadow-sm hover:shadow-lg transition-shadow duration-500 rounded-sm">
                     <span className="uppercase tracking-[0.2em] text-xs text-gray-400 mb-6">{event.countdownLabel}</span>
                     <CountdownTimer />
                 </motion.div>

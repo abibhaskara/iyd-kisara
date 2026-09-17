@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { elegantFadeIn } from '../../utils/animations';
 
 export const EventCard = ({ icon: Icon, title, desc, actionText, actionIcon: ActionIcon, href, onAction }) => (
-    <motion.div variants={elegantFadeIn} whileHover={{ y: -5, transition: { duration: 0.4, ease: "easeOut" } }} className="flex flex-col items-center text-center p-10 border border-gray-100 bg-white shadow-sm hover:shadow-lg transition-shadow duration-500 rounded-sm">
+    <motion.div variants={elegantFadeIn} whileHover={{ y: -5, transition: { duration: 0.4, ease: "easeOut" } }} className="flex flex-col items-center text-center p-10 border border-white/60 bg-white/80 backdrop-blur-md shadow-sm hover:shadow-lg transition-shadow duration-500 rounded-sm">
         <Icon size={24} strokeWidth={1} className="mb-6 text-gray-400" />
         <h3 className="font-serif text-2xl mb-3">{title}</h3>
         <p className="font-light text-sm text-gray-500 uppercase tracking-wider mb-8 max-w-xs mx-auto">{desc}</p>

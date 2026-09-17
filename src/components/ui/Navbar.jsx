@@ -28,9 +28,9 @@ export const Navbar = ({ activeSection, isVisible }) => {
                         return (
                             <button key={item.id} onClick={() => document.getElementById(item.id)?.scrollIntoView({ behavior: 'smooth' })} onMouseEnter={() => setHoveredPath(item.id)} className="relative cursor-pointer focus:outline-none flex-shrink-0">
                                 <motion.div layout className="relative z-10 flex items-center justify-center px-3 py-2 rounded-full overflow-hidden" animate={{ x: getHoverOffset(itemIdx), scale: hoveredPath === item.id ? 1.05 : 1 }} whileTap={{ scale: 0.95 }} transition={{ type: "spring", stiffness: 400, damping: 30 }}>
-                                    <item.icon size={18} strokeWidth={1.5} color={isActive ? THEME_COLORS.primary : '#999'} className="relative z-20" />
-                                    <motion.span initial={false} animate={{ width: isActive ? "auto" : 0, opacity: isActive ? 1 : 0, marginLeft: isActive ? 10 : 0 }} className="whitespace-nowrap font-medium tracking-wide text-xs uppercase relative z-20 overflow-hidden" style={{ color: THEME_COLORS.primary }}>{item.label}</motion.span>
-                                    {isActive && <motion.div layoutId="activePill" className="absolute inset-0 rounded-full z-0" style={{ backgroundColor: '#eeeeee' }} transition={{ type: "spring", stiffness: 300, damping: 30 }} />}
+                                    <item.icon size={18} strokeWidth={1.5} color={isActive ? '#000000' : '#666666'} className="relative z-20" />
+                                    <motion.span initial={false} animate={{ width: isActive ? "auto" : 0, opacity: isActive ? 1 : 0, marginLeft: isActive ? 10 : 0 }} className="whitespace-nowrap font-medium tracking-wide text-xs uppercase relative z-20 overflow-hidden text-black" style={{ color: '#000000' }}>{item.label}</motion.span>
+                                    {isActive && <motion.div layoutId="activePill" className="absolute inset-0 rounded-full z-0" style={{ backgroundColor: '#e5e7eb' }} transition={{ type: "spring", stiffness: 300, damping: 30 }} />}
                                 </motion.div>
                             </button>
                         );

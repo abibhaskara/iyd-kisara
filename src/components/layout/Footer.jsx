@@ -2,7 +2,7 @@ import React from 'react';
 import { TEMPLATE_CONTENT } from '../../config';
 
 export const Footer = () => (
-    <footer className="py-10 bg-white border-t border-gray-50 text-center relative z-10 pb-32">
+    <footer className="py-10 bg-transparent border-t border-black/5 text-center relative z-10 pb-32">
         <a
             href={TEMPLATE_CONTENT.footer.link || "https://abibhaskara.com"}
             target="_blank"

@@ -34,12 +34,12 @@ export const HomeSection = ({ hasEntered }) => {
                 </motion.div>
             </motion.div>
 
-            {/* White fade overlay from bottom */}
+            {/* Subtle fade overlay from bottom */}
             <motion.div
                 className="absolute bottom-0 left-0 right-0 z-[1] pointer-events-none"
                 style={{
                     height: fadeOverlayHeight,
-                    background: 'linear-gradient(to top, white 0%, white 30%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0.4) 70%, rgba(255,255,255,0.1) 85%, transparent 100%)'
+                    background: 'linear-gradient(to top, rgba(0,0,0,0.4) 0%, transparent 100%)'
                 }}
             />
 
@@ -57,16 +57,6 @@ export const HomeSection = ({ hasEntered }) => {
                     <span className="text-4xl sm:text-5xl font-serif">{date}</span>
                 </motion.div>
             </motion.div>
-
-            <motion.div className="absolute bottom-32 left-0 right-0 z-10 flex justify-center" style={{ opacity: textOpacity }} animate={{ y: [0, 10, 0] }} transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}>
-                <span className="text-[10px] uppercase tracking-widest text-white/70 text-center">{home.scrollLabel}</span>
-            </motion.div>
-
-            <div className="absolute bottom-[-1px] left-0 right-0 z-20 w-full overflow-hidden leading-[0]">
-                <svg className="relative block w-[calc(100%+1.3px)] h-[80px] sm:h-[120px]" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                    <path d="M0,60 Q600,110 1200,60 V120 H0 Z" className="fill-white" />
-                </svg>
-            </div>
         </section>
     );
 };
