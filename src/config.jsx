@@ -74,6 +74,18 @@ export const TEMPLATE_CONTENT = {
         description: <>Kami mengundang Anda untuk hadir dengan pakaian<br /><span className="font-serif text-2xl italic text-white">"{META.dressCode}"</span></>
     },
 
+    // Section: RSVP
+    rsvp: {
+        sectionTitle: "Konfirmasi Kehadiran",
+        sectionSubtitle: "RSVP",
+        description: "Mohon kesediaan Anda untuk mengisi konfirmasi kehadiran di bawah ini demi kelancaran kegiatan.",
+        submitButton: "Kirim Konfirmasi",
+        submittingButton: "Mengirim...",
+        successTitle: "Terima Kasih!",
+        successMessage: "Konfirmasi kehadiran Anda telah berhasil tercatat. Kami menantikan kehadiran Anda di acara puncak!",
+        submitAnother: "Kirim Tanggapan Lain"
+    },
+
     // Section: Gallery
     gallery: {
         sectionTitle: "Captured Moments",

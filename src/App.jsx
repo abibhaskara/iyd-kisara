@@ -19,12 +19,19 @@ import { HomeSection } from './components/sections/HomeSection';
 import { EventSection } from './components/sections/EventSection';
 import { AgendaSection } from './components/sections/AgendaSection';
 import { DresscodeSection } from './components/sections/AttireSection';
+import { RSVPSection } from './components/sections/RSVPSection';
 import { ThankYouSection } from './components/sections/ThankYouSection';
 
 // Layout Components
 import { Footer } from './components/layout/Footer';
+import { AdminPage } from './components/admin/AdminPage';
 
 export default function App() {
+    const [isAdmin, setIsAdmin] = useState(() => {
+        return window.location.pathname.startsWith('/admin') || 
+               new URLSearchParams(window.location.search).has('admin') || 
+               window.location.hash === '#admin';
+    });
     const [hasEntered, setHasEntered] = useState(false);
     const [activeSection, setActiveSection] = useState('home');
     const [isPlaying, setIsPlaying] = useState(false);
@@ -34,6 +41,22 @@ export default function App() {
         const name = new URLSearchParams(window.location.search).get('to');
         return name ? decodeURIComponent(name) : TEMPLATE_CONTENT.landing.defaultGuest;
     });
+
+    useEffect(() => {
+        const handleLocationChange = () => {
+            setIsAdmin(
+                window.location.pathname.startsWith('/admin') || 
+                new URLSearchParams(window.location.search).has('admin') || 
+                window.location.hash === '#admin'
+            );
+        };
+        window.addEventListener('popstate', handleLocationChange);
+        window.addEventListener('hashchange', handleLocationChange);
+        return () => {
+            window.removeEventListener('popstate', handleLocationChange);
+            window.removeEventListener('hashchange', handleLocationChange);
+        };
+    }, []);
 
     useEffect(() => {
         if (!hasEntered) return;
@@ -53,6 +76,17 @@ export default function App() {
     }, [hasEntered]);
 
     const handleOpen = () => { setHasEntered(true); setIsPlaying(true); };
+
+    if (isAdmin) {
+        return (
+            <AdminPage 
+                onBack={() => {
+                    window.history.pushState({}, '', '/');
+                    setIsAdmin(false);
+                }} 
+            />
+        );
+    }
 
     return (
         <div className="min-h-screen w-full relative overflow-hidden text-gray-900 selection:bg-gray-200">
@@ -80,6 +114,9 @@ export default function App() {
                 </LazySection>
                 <LazySection minHeight="100vh">
                     <DresscodeSection />
+                </LazySection>
+                <LazySection minHeight="100vh">
+                    <RSVPSection />
                 </LazySection>
                 <LazySection minHeight="100vh">
                     <ThankYouSection />

@@ -8,5 +8,12 @@
 	},
 	"build": {
 		"command": "npm run build"
-	}
+	},
+	"d1_databases": [
+		{
+			"binding": "DB",
+			"database_name": "iyd-kisara-db",
+			"database_id": "1047f8ac-f454-426a-965c-c17fbb0e8f20"
+		}
+	]
 }
